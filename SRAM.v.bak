@@ -3,11 +3,12 @@
 
 module sram
 #(parameter WIDTH=8,
-  parameter DEPTH=1024,
+  parameter DEPTH=8,
   parameter ADDR_WIDTH=$clog2(DEPTH))(
 output reg [WIDTH-1:0] data_out,
 input [WIDTH-1:0] data_in,
 input clk,
+input reset
 input chip_sel,
 input read_ena,
 input write_ena,
@@ -17,14 +18,26 @@ reg [WIDTH-1:0] mem [0:DEPTH-1];
 
 //Write Operation
 always@(posedge clk) begin
-	
-	if( chip_sel & write_ena & !read_ena) 
+	if(reset) begin
+		mem[0][0:7]<=0;
+		mem[1][0:7]<=0;
+		mem[2][0:7]<=0;
+		mem[3][0:7]<=0;
+		mem[4][0:7]<=0;
+		mem[5][0:7]<=0;
+		mem[6][0:7]<=0;
+		mem[7][0:7]<=0;
+
+	end
+	else if( chip_sel & write_ena & !read_ena) 
 		mem[address]<=data_in;
 end
 
 //Read Operation
 always@(posedge clk) begin
-	if(chip_sel  &	read_ena  &  !write_ena)
+	if(reset) 
+		data_out<=0;
+	else if(chip_sel   &	read_ena  &  !write_ena)
 		data_out<= mem[address];
 	else 
 		data_out<=0;
@@ -35,12 +48,13 @@ endmodule
 
 module sram_tb
 #(parameter WIDTH=8,
-  parameter DEPTH=1024,
+  parameter DEPTH=8,
   parameter ADDR_WIDTH=$clog2(DEPTH))();
 
 wire [WIDTH-1:0] data_out_tb;
 reg [WIDTH-1:0] data_in_tb;
 reg clk_tb;
+reg reset_tb;
 reg chip_sel_tb;
 reg read_ena_tb;
 reg write_ena_tb;
@@ -51,6 +65,7 @@ sram dut(
 .data_out(data_out_tb),
 .data_in(data_in_tb),
 .clk(clk_tb),
+.reset(reset_tb),
 .chip_sel(chip_sel_tb),
 .read_ena(read_ena_tb),
 .write_ena(write_ena_tb),

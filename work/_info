@@ -11,24 +11,24 @@ cModel Technology
 dC:/Users/HARSHITH/Desktop/Verilog/pwm
 vsram
 Z0 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
-Z1 !s110 1711035960
+Z1 !s110 1711074970
 !i10b 1
-!s100 6:EhVD7LQKo2k`fG54[mD1
+!s100 B2US@K_FH;5RXQmG@1BgF0
 Z2 !s11b Dg1SIo80bB@j0V0VzS_@n1
-IHj3_2KL0FQS_XQi3CTbSG1
+ILBO>IoB5;9z;bU852OQ4;2
 Z3 VDg1SIo80bB@j0V0VzS_@n1
 S1
 Z4 dC:/Users/HARSHITH/Desktop/Verilog/SRAM-harsh/single port SRAM
-Z5 w1711035957
+Z5 w1711074968
 Z6 8C:/Users/HARSHITH/Desktop/Verilog/SRAM-harsh/single port SRAM/SRAM.v
 Z7 FC:/Users/HARSHITH/Desktop/Verilog/SRAM-harsh/single port SRAM/SRAM.v
-!i122 32
-L0 4 30
+!i122 33
+L0 4 43
 Z8 OV;L;2020.1;71
 r1
 !s85 0
 31
-Z9 !s108 1711035959.000000
+Z9 !s108 1711074970.000000
 !s107 C:/Users/HARSHITH/Desktop/Verilog/SRAM-harsh/single port SRAM/SRAM.v|
 Z10 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/HARSHITH/Desktop/Verilog/SRAM-harsh/single port SRAM/SRAM.v|
 !i113 1
@@ -38,17 +38,17 @@ vsram_tb
 R0
 R1
 !i10b 1
-!s100 9>[@<[eP0]jJjgbhzi^d63
+!s100 QA=1OAX02:jmX7NFdKfR22
 R2
-IgLVQkc_KfgGT@4B818S:W2
+IHziIF11]XlGYRbNDQ@I0@3
 R3
 S1
 R4
 R5
 R6
 R7
-!i122 32
-L0 36 53
+!i122 33
+L0 49 55
 R8
 r1
 !s85 0
